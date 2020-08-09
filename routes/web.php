@@ -22,3 +22,15 @@ Route::get('/items/{id}', 'ItemController@show'); // menampilkan detail item den
 Route::get('/items/{id}/edit', 'ItemController@edit'); // menampilkan form untuk edit item
 Route::put('/items/{id}', 'ItemController@update'); // menyimpan perubahan dari form edit
 Route::delete('/items/{id}', 'ItemController@destroy'); // menghapus data dengan id
+
+Route::get('/', function(){
+    return view('welcome');
+});
+Route::get('/proyek', 'PerusahaanController@index');
+Route::get('/proyek/create', 'PerusahaanController@create');
+Route::post('/proyek', 'PerusahaanController@store');
+Route::get('/proyek/{id}/daftarkan-staff', 'PerusahaanController@join');
+Route::post('/proyek/{id}/daftarkan-staff', 'PerusahaanController@save');
+Route::get('/proyek/{id}/edit', 'PerusahaanController@edit');
+Route::put('/proyek/{id}', 'PerusahaanController@update');
+Route::delete('/proyek/{id}', 'PerusahaanController@delete');
